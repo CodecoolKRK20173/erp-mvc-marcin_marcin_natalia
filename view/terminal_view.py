@@ -23,6 +23,59 @@ def print_table(table, title_list):
     """
 
     # your goes code
+    table_marker = "-"
+    separator = "|"
+    space = " "
+    max_len_elements = []
+    i = 0
+    while i < len(title_list):
+        max_len_element_collection = []
+        for collection in table:
+            max_len_element_collection.append(collection[i])
+        i += 1
+        max_len_element = max_len_element_collection[0]
+        for element in max_len_element_collection:
+            if len(element) > len(max_len_element):
+                max_len_element = element
+        max_len_elements.append(max_len_element)
+        print(max_len_element_collection)
+        print(max_len_elements)
+    max_len_title = []
+
+    i = 0
+    while i < len(max_len_elements):
+        if len(title_list[i]) > len(max_len_elements[i]):
+            max_len_title.append(title_list[i])
+        else: 
+            max_len_title.append(max_len_elements[i])
+        i += 1
+
+    print(max_len_title)
+    total_length = 0
+    for title in max_len_title:
+        total_length += len(title)
+    print(total_length)
+    print(len(max_len_title))
+
+    main_line = table_marker * (total_length + (2 * len(max_len_title) + len(separator) * (len(max_len_title) + 1)))
+    print(main_line)
+    i = 0
+    while i < len(title_list) - 1:
+        print(f"{separator}{(title_list[i]).center(len(max_len_title[i]) + 2 * len(space))}", end="")
+        i += 1
+    print(f"{separator}{(title_list[i]).center(len(max_len_title[i]) + 2 * len(space))}{separator}")
+    print(main_line)
+    for collection in table:
+        i = 0
+        for element in collection:
+            if i < len(title_list) - 1:
+                print("{}{}".format(separator, element.center(len(max_len_title[i]) + 2 * len(space))), end="")
+                i += 1
+            else:
+                print("{}{}{}".format(separator, element.center(len(max_len_title[i]) + 2 * len(space)), separator))
+                print(main_line)
+
+
 
 
 def print_result(result, label):
@@ -38,6 +91,9 @@ def print_result(result, label):
     """
 
     # your code
+    def print_result(result, label):
+    n = "\n"
+    print(f"{label}: {n}{result}")
 
 
 def print_menu(title, list_options, exit_message):
@@ -62,6 +118,10 @@ def print_menu(title, list_options, exit_message):
     """
 
     # your code
+    print(title, ":")
+    for index in range(len(list_options)):
+        print("\t{} {}".format(index + 1, list_options[index]))
+    print("\t0 {}".format(exit_message))
 
 
 def get_inputs(list_labels, title):
@@ -86,6 +146,11 @@ def get_inputs(list_labels, title):
     inputs = []
 
     # your code
+     print(title, ":")
+    for index in range(len(list_labels)):
+        print("\t{}:".format(list_labels[index]), end=' ')
+        user_input = input()
+        inputs.append(user_input)  
 
     return inputs
 
@@ -104,5 +169,11 @@ def print_error_message(message):
     Returns:
         None: This function doesn't return anything it only prints to console.
     """
+#######################################################################################################
+
+     print("Error", message, sep='')
+
+
+#######################################################################################################
 
     # your code
