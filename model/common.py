@@ -26,8 +26,8 @@ def generate_random(table):
     
 def generate():
     number = ('1','2','3','4','5','6','7','8','9','0')
-    letter = ('a','b','c','d','e','f','g','h','i','j','k',/
-    'l','m','n','o','p','r','s','t','u','w','y','z','x','q')
+    letter = ('a','b','c','d','e','f','g','h','i','j','k', 
+              'l','m','n','o','p','r','s','t','u','w','y','z','x','q')
     special = ('!','@','#','$','%','&')
     
     digit = random.choice(number)

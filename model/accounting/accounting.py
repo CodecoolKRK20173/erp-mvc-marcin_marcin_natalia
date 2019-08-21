@@ -15,6 +15,7 @@ from model import data_manager
 from model import common
 
 
+#print(data_manager.get_table_from_file("items.csv"))
 
 def add(table, record):
     """

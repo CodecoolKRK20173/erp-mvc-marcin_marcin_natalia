@@ -21,8 +21,6 @@ def print_table(table, title_list):
     Returns:
         None: This function doesn't return anything it only prints to console.
     """
-
-    # your goes code
     table_marker = "-"
     separator = "|"
     space = " "
@@ -76,8 +74,6 @@ def print_table(table, title_list):
                 print(main_line)
 
 
-
-
 def print_result(result, label):
     """
     Displays results of the special functions.
@@ -89,9 +85,6 @@ def print_result(result, label):
     Returns:
         None: This function doesn't return anything it only prints to console.
     """
-
-    # your code
-    def print_result(result, label):
     n = "\n"
     print(f"{label}: {n}{result}")
 
@@ -146,7 +139,7 @@ def get_inputs(list_labels, title):
     inputs = []
 
     # your code
-     print(title, ":")
+    print(title, ":")
     for index in range(len(list_labels)):
         print("\t{}:".format(list_labels[index]), end=' ')
         user_input = input()
@@ -171,7 +164,7 @@ def print_error_message(message):
     """
 #######################################################################################################
 
-     print("Error", message, sep='')
+    print("Error", message, sep='')
 
 
 #######################################################################################################
