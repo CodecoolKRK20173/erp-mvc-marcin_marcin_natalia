@@ -5,6 +5,7 @@ Data table structure:
         at least 2 special characters (except: ';'), 2 number, 2 lower and 2 upper case letters)
     * name (string)
     * birth_year (number)
+    
 """
 # everything you'll need is imported:
 from model import data_manager
