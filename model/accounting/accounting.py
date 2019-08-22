@@ -28,7 +28,9 @@ def add(table, record):
     Returns:
         list: Table with a new record
     """
-    # your code
+    # data_manager.get_table_from_file("items.csv")
+    table.append(record)
+    # data_manager.write_table_to_file(file_name, table)
 
     return table
 
@@ -44,8 +46,11 @@ def remove(table, id_):
     Returns:
         list: Table without specified record.
     """
-
-    # your code
+    # data_manager.get_table_from_file("items.csv")
+    for collection in table:
+        if collection[0] == id_:
+            table.remove(collection)
+    # data_manager.write_table_to_file(file_name, table)
 
     return table
 
@@ -63,7 +68,11 @@ def update(table, id_, record):
         list: table with updated record
     """
 
-    # your code
+    i = 0
+    for collection in table:
+        if collection[0] == id_:
+            table[i] = record
+            i += 1
 
     return table
 
@@ -82,7 +91,23 @@ def which_year_max(table):
         number
     """
 
-    # your code
+    profit_year = {}
+    for collection in table:
+        if collection[3] not in profit_year:
+            profit_year[collection[3]] = 0
+        if collection[4] == "in":
+            profit_year[collection[3]] += int(collection[5])
+        else:
+            profit_year[collection[3]] -= int(collection[5])
+
+    years_profits = list(profit_year.items())
+    the_best_year = years_profits[0][0]
+    the_best_profit = float(years_profits[0][0])
+    for collection in years_profits:
+        if collection[1] > the_best_profit:
+            the_best_profit = collection[1]
+            the_best_year = float(collection[0])
+    return the_best_year
 
 
 def avg_amount(table, year):

@@ -12,5 +12,10 @@ def run():
     Returns:
         None
     """
+    options = ["Add new record",
+               "Remove record",
+               "Update record",
+               "Which year has the highest profit?",
+               "What is the average (per item) profit in a given year?"]
 
-    # your code
+    terminal_view.print_menu("Menu", options, "Back to Main Menu")

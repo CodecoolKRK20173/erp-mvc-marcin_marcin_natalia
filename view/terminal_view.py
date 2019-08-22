@@ -111,7 +111,7 @@ def print_menu(title, list_options, exit_message):
     """
 
     # your code
-    print(title, ":")
+    print(title)
     for index in range(len(list_options)):
         print("\t{} {}".format(index + 1, list_options[index]))
     print("\t0 {}".format(exit_message))
@@ -139,16 +139,15 @@ def get_inputs(list_labels, title):
     inputs = []
 
     # your code
-    print(title, ":")
+    print(title,)
     for index in range(len(list_labels)):
-        print("\t{}:".format(list_labels[index]), end=' ')
+        print("\t{}".format(list_labels[index]), end=' ')
         user_input = input()
         inputs.append(user_input)  
 
     return inputs
 
 def get_choice(options):
-    print_menu("Main menu",options, "Exit program")
     inputs = get_inputs(["Please enter a number: "], "")
     return inputs[0]
 

@@ -1,6 +1,7 @@
 # Do not modify this file
 # run this program (the ERP software) from the terminal from thd root directory of this project
 
+
 from controller import root_controller
 
 def main():
