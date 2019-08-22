@@ -68,7 +68,7 @@ def update(table, id_, record):
 
     # your code
 
-     i = 0
+    i = 0
     for collection in table:
         if collection[0] == id_:
             table[i] = record
