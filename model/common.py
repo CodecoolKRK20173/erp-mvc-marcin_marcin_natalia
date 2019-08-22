@@ -40,7 +40,6 @@ def generate():
     bigs = random.choice(letter).upper()
     smalls = random.choice(letter).lower()
     specifics = random.choice(special)
-<<<<<<< Updated upstream
     
     generated = digit + big + small + specific + digits + bigs + smalls + specifics
 
@@ -48,12 +47,3 @@ def generate():
     return generated
 
 #generate()
-=======
-    tables = digits + bigs + smalls + specifics   
-
-    generated = table + tables
-    random.shuffle(generated)                
-
-    print (generated)
-    return ''.join(generated)
->>>>>>> Stashed changes
