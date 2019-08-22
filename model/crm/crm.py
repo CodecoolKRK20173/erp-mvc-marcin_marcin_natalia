@@ -24,7 +24,9 @@ def add(table, record):
     Returns:
         list: Table with a new record
     """
-    # your code
+     # data_manager.get_table_from_file("items.csv")
+    table.append(record)
+    # data_manager.write_table_to_file(file_name, table)
 
     return table
 
@@ -41,7 +43,11 @@ def remove(table, id_):
         list: Table without specified record.
     """
 
-    # your code
+    # data_manager.get_table_from_file("items.csv")
+    for collection in table:
+        if collection[0] == id_:
+            table.remove(collection)
+    # data_manager.write_table_to_file(file_name, table)
 
     return table
 
@@ -59,7 +65,11 @@ def update(table, id_, record):
         list: table with updated record
     """
 
-    # your code
+    i = 0
+    for collection in table:
+        if collection[0] == id_:
+            table[i] = record
+            i += 1
 
     return table
 
@@ -79,8 +89,25 @@ def get_longest_name_id(table):
                 the last by alphabetical order of the names)
         """
 
-    # your code
+    the_longest_name = table[0][1]
+    id_the_longest_name = table[0][0]
+    longest_names_id = {}
 
+    for collection in table:
+        if len(collection[1]) > len(the_longest_name):
+            the_longest_name = collection[1]
+            id_the_longest_name = collection[0]
+        elif len(collection[1]) == len(the_longest_name):
+            longest_names_id[collection[1]] = collection[0]
+
+    longest_names_id = list(longest_names_id.items())
+    for collection in longest_names_id:
+        i = 0
+        for letter in collection:
+            if letter.lower() > the_longest_name[i].lower():
+                the_longest_name = collection[0]
+                id_the_longest_name = collection[1]
+    return id_the_longest_name
 
 # the question: Which customers has subscribed to the newsletter?
 # return type: list of strings (where string is like email+separator+name, separator=";")
@@ -95,4 +122,8 @@ def get_subscribed_emails(table):
             list: list of strings (where a string is like "email;name")
         """
 
-    # your code
+    email_name = []
+    for collection in table:
+        if collection[3] == "1":
+            email_name.append(collection[2] + ";" + collection[1]) 
+    return email_name
