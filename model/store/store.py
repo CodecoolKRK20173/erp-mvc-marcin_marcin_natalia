@@ -27,6 +27,8 @@ def add(table, record):
     """
     # your code
 
+    table.append(record)
+
     return table
 
 
@@ -43,6 +45,10 @@ def remove(table, id_):
     """
 
     # your code
+
+    for collection in table:
+        if collection[0] == id_:
+            table.remove(collection)
 
     return table
 
@@ -61,6 +67,12 @@ def update(table, id_, record):
     """
 
     # your code
+
+     i = 0
+    for collection in table:
+        if collection[0] == id_:
+            table[i] = record
+            i += 1
 
     return table
 
