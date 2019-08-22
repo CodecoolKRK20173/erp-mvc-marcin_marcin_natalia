@@ -6,7 +6,6 @@ Data table structure:
     * name (string)
     * birth_year (number)
 """
-
 # everything you'll need is imported:
 from model import data_manager
 from model import common
